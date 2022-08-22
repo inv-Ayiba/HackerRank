@@ -1,5 +1,9 @@
 # https://projecteuler.net/problem=254
 import math
+universalRange=2000
+
+
+
 def f(n):
     strNum=str(n)
     sumi=0
@@ -18,7 +22,8 @@ def sf(n):
 def gfor(i,r):
     #smallest int such that sf(n)=i
     for n in range(r):
-        if(sf(n)==i):
+        if(sf(n)==i and n!=0):
+            #have to remove 0(zero) 
             # return("sf(",n,")=",i)
             return(n)
 
@@ -40,16 +45,28 @@ def sgfor(i,r):
 
 def summforsg(ra1,ra2):
     sum=0
+    worked=150 ##test
     for k in range(ra1,ra2+1):
-        sum+= sgfor(k,268)
-        print(k, sgfor(k,268))
-    print(sum)
-# print(sf(25))
-print(sgfor(1,268))
+        if(sgfor(k,universalRange)=="error! range r probably too small"):
+            # print(k,"messed up") ##test
+            worked-=1  ##test
+        try:
+            sum+= sgfor(k,universalRange)
+        except(TypeError):
+            continue
+        # print(k, sgfor(k,universalRange))  ##test string
+    return(sum,"  ","worked :",worked,"  at range:",universalRange) ##test
+    # return(sum)
 
-import time
-# summforsg(1,20)
-#### why is sf(1) 1 and  sgfor(1,268) 0
-target=sf
-print(target.__name__)
+# print(summforsg(1,150))
+print(sgfor(150,100000))
+
+
+
+# print(sf(25))
+# target2 = sgfor ;print(target2.__name__,"  ",target2(1,universalRange))
+# import time
+
+
+# target=sf ;print(target.__name__,"  ",target(1))
 # time.time.__name__ 
