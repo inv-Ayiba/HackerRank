@@ -1,4 +1,15 @@
 # https://projecteuler.net/problem=254
+#Define f(n) as the sum of the factorials of the digits of n. For example, f(342) = 3! + 4! + 2! = 32.
+
+# Define sf(n) as the sum of the digits of f(n). So sf(342) = 3 + 2 = 5.
+
+# Define g(i) to be the smallest positive integer n such that sf(n) = i. Though sf(342) is 5, sf(25) is also 5, and it can be verified that g(5) is 25.
+
+# Define sg(i) as the sum of the digits of g(i). So sg(5) = 2 + 5 = 7.
+
+# Further, it can be verified that g(20) is 267 and ∑ sg(i) for 1 ≤ i ≤ 20 is 156.
+
+# What is ∑ sg(i) for 1 ≤ i ≤ 150?
 import math
 universalRange=2000
 
@@ -13,13 +24,17 @@ def inHere(this,here):
 # print(inHere(3,[2,4,56]))
 
 def f(n):
+    # f(33) = 12 because 3!+3!=12 
     strNum=str(n)
     sumi=0
     for i in range(len(strNum)):
         sumi+=(math.factorial(int(strNum[i])))
     return(sumi)
 
+
 def sf(n):
+    # sf(33) = 3 because f(33)=12, and 1+2=3
+    # sf(5)= 3 because f(5)=120, and 1+2+0=3
     ff=f(n)
     strNum=str(ff)
     sumi=0
@@ -27,18 +42,21 @@ def sf(n):
         sumi+=(int(strNum[i]))
     return(sumi)
 
-def gfor(i,r):
+def gfor(i,r=2500):
     #smallest int such that sf(n)=i
+    #gfor(11)= 26 because sf(26)=11
     for n in range(r):
         if(sf(n)==i and n!=0):
             #have to remove 0(zero) 
             # return("sf(",n,")=",i)
             
             return(n)
+print("gfor(3)",gfor(3))
+print("f(5)",f(5))
 
-
-def sgfor(i,r):
+def sgfor(i,r=2500):
     #sum of g(i) digits
+    #sgfor(11)= 8 ,gfor(11)= 26 so 2+6= 8
     gg=gfor(i,r)
     strNum=str(gg)
     
@@ -49,10 +67,13 @@ def sgfor(i,r):
         return(sumi)
     except(ValueError):
         return "error! range r probably too small"
-        
+
+# print("sgfor(11)",sgfor(11))
+       
 
 
 def summforsg(ra1,ra2):
+    # sum of from sgfor(ra1) to sgfor(ra2)
     sum=0
     worked=150 ##test
     workedList=[]
@@ -88,11 +109,44 @@ count = 0
 # # # print(take)
 # # # print("count",count)
 
-for i in range(1,36+1):
-    take.append([i,gfor(i,2500)])
-    count+=1
-print(take)
-print("count",count)
+# #generate an array ,don't recall what it's for though
+# for i in range(1,36+1):
+#     take.append([i,gfor(i,2500)])
+#     count+=1
+# print(take)
+# print("count",count)
+
+# print(gfor(33,40)) #ans 39
+# print(sf(39)) ## ok so suspision proven
+
+
+def justSumDigits(num,wantit="yes"):
+    food=str(num)
+    print("length ",(len(food)),"  justSumDigits  ")
+    sum=0
+    for i in range(len(food)):
+        sum+=int(food[i])
+    if wantit=="yes":
+        return sum
+    else:
+        return "//////////"
+
+target = 99999999999999996
+# print(f(target))
+# print(justSumDigits(target))
+
+print("sf(15)",sf(15))
+
+# target = 999999999999999999999999999999999999999999999999999999999999999
+# print("justSumDigits(target)",justSumDigits(target,"poop"))
+
+# print("justSumDigits((f(target)))",justSumDigits((f(target))))
+# print(10**target/f(9))
+
+print(10*275573192239)
+
+# print(math.factorial(f(33)))
+# print(f(33))
 
 
 # print(sf(25))
