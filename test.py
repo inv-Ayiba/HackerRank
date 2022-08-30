@@ -120,7 +120,7 @@ def oyago(numstart,numend,r1,r2,gap):
             r1=r2
             r2+=gap
         print(numstart,r1,r2,g)
-oyago(45,56,12180000,12200000,50000)
+oyago(45,56,14700000,14700020,50000)
         
 
 
