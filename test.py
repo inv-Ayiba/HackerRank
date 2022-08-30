@@ -55,7 +55,7 @@ def sgfor(i,r1=0,r=2500):
 
 
 tagrget=299
-print("no.1",gfor(29))
+# # print("no.1",gfor(29))
 # print("no.2",sgfor(29))
 
 # print(newf(tagrget))
@@ -106,18 +106,21 @@ def getFactOut(k):
 
 
 num=45
-print(num,",",gfor(num,44000,80000))
+# print(num,",",gfor(num,44000,80000))
 
 def oyago(numstart,numend,r1,r2,gap):
     g=[]
     sg=[]
-
-    gg=gfor(numstart,r1,r2)
-    if(gg!=None):
-        g.append([numstart,gg])
-    else:
-        r1=r2
-        r2+=gap
+    while numstart!=numend:
+        gg=gfor(numstart,r1,r2)
+        if(gg!=None):
+            g.append([numstart,gg])
+            numstart+=1
+        else:
+            r1=r2
+            r2+=gap
+        print(numstart,r1,r2,g)
+oyago(45,56,12180000,12200000,50000)
         
 
 
