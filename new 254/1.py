@@ -22,7 +22,6 @@ def inHere(this,here):
         
         return False
 
-# print(inHere(3,[2,4,56]))
 
 def f(n):
     # f(33) = 12 because 3!+3!=12 
@@ -62,8 +61,6 @@ def gfor(i,r=2500):
             # return("sf(",n,")=",i)
             
             return(n)
-print("gfor(3)",gfor(3))
-print("f(25)",f(25))
 
 def sgfor(i,r=2500):
     #sum of g(i) digits
@@ -79,7 +76,6 @@ def sgfor(i,r=2500):
     except(ValueError):
         return "error! range r probably too small"
 
-# print("sgfor(11)",sgfor(11))
        
 
 
@@ -93,7 +89,6 @@ def summforsg(ra1,ra2):
         try:
             grab=sgfor(k,universalRange)
             if(grab=="error! range r probably too small"):
-                # print(k,"messed up") ##test
                 worked-=1  ##test
 
 
@@ -101,13 +96,10 @@ def summforsg(ra1,ra2):
             workedList.append(k) ##test
         except(TypeError):
             continue
-        # print(k, grab)  ##test string
     # return(workedList)
     return(sum,"  ","worked :",worked,"  at range:",universalRange) ##test
     # return(sum)
 
-# print(summforsg(1,150))
-# print(sgfor(150,100000)) ##
 
 excludeobj={2000:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]}
 #[number,g()] = [[1, 1], [2, 2], [3, 5], [4, 15], [5, 25], [6, 3], [7, 13], [8, 23], [9, 6], [10, 16], [11, 26], [12, 44], [13, 144], [14, 256], [15, 36], [16, 136], [17, 236], [18, 67], [19, 167], [20, 267], [21, 349], [22, 1349], [24, 49], [25, 149], [26, 249], [27, 9], [28, 19], [29, 29], [30, 129], [31, 229], [32, 1229], [33, 39], [34, 139], [35, 239], [36, 1239]]
@@ -117,23 +109,17 @@ count = 0
 # # # for i in range(len(target04)):
 # # #     take.append([target04[i],gfor(target04[i],2500)])
 # # #     count+=1
-# # # print(take)
-# # # print("count",count)
 
 # #generate an array ,don't recall what it's for though
 # for i in range(1,36+1):
 #     take.append([i,gfor(i,2500)])
 #     count+=1
-# print(take)
-# print("count",count)
 
-# print(gfor(33,40)) #ans 39
-# print(sf(39)) ## ok so suspision proven
+print(summforsg(1,20))
 
 
 def justSumDigits(num,wantit="yes"):
     food=str(num)
-    print("length ",(len(food)),"  justSumDigits  ")
     sum=0
     for i in range(len(food)):
         sum+=int(food[i])
@@ -143,43 +129,25 @@ def justSumDigits(num,wantit="yes"):
         return "//////////"
 
 target = 99999999999999996
-# print(f(target))
-# print(justSumDigits(target))
 
 divide =(target/math.factorial(9))
 giberish=(divide*math.factorial(9))
 
-print("gibb",giberish)
 
 
 
 # target = 999999999999999999999999999999999999999999999999999999999999999
-# print("justSumDigits(target)",justSumDigits(target,"poop"))
-
-# print("justSumDigits((f(target)))",justSumDigits((f(target))))
-# print(10**target/f(9))
-
-print(10*275573192239)
-
-# print(math.factorial(f(33)))
-# print(f(33))
 
 
-# print(sf(25))
-# target2 = sgfor ;print(target2.__name__,"  ",target2(1,universalRange))
+
+
+
 # import time
 
 
-# target=sf ;print(target.__name__,"  ",target(1))
 # time.time.__name__ 
 
-# print ("gfor(28)",gfor(28))
-# print ("sf(19)",sf(19))
-# print ("f(19)",f(19))
 
 
-# print ("gfor(25)",gfor(25))
-# print ("sf(149)",sf(149))
-# print ("f(149)",f(149))
 
 
