@@ -1,0 +1,16 @@
+def solution(inputString):
+    def same(one,two):
+        return one==two
+    def divide(stri):
+        length=len(stri)
+        middle=math.ceil(length/2)
+        first="";second=""
+        for i in range(middle):
+            first+=stri[i]
+            second+=stri[length-(i+1)]
+        return([first,second])
+    ans=divide(inputString)
+    
+    return(same(ans[0],ans[1]))
+        
+
