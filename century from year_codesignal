@@ -1,0 +1,23 @@
+def solution(year):
+    div=year/100
+    down=math.floor(div)
+    print(div-down)
+    if((div-down)>0):
+        return(down+1)
+    else:
+        return(down)
+
+#century from year,
+# Example
+
+# For year = 1905, the output should be
+# solution(year) = 20;
+# For year = 1700, the output should be
+# solution(year) = 17
+# Tests passed: 18/18.
+# Sample tests:
+# 9/9
+# Hidden tests:
+# 9/9
+# Score:
+# 300/300
