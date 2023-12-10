@@ -1,0 +1,10 @@
+def mult(first,second):
+    return first * second
+def twos(array):
+    feed=[]
+    for i in range(len(array)-1):
+        feed.append(mult(array[i],array[i+1]))
+    return feed
+def solution(inputArray):
+    return(max(twos(inputArray)))
+
