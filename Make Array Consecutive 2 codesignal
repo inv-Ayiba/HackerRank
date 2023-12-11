@@ -1,0 +1,12 @@
+def minus(statues):
+    sortedi=sorted(statues)
+    length=len(sortedi)
+    stor=[]
+    
+    for i in range(length-1):
+        stor.append(sortedi[i+1]-sortedi[i])
+    return(stor)
+def solution(statues):
+    mini=minus(statues)
+    return (sum(mini)-len(mini))
+
