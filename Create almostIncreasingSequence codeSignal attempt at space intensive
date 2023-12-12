@@ -1,0 +1,33 @@
+#normal for loop: almostIncreasingSequence codeSignal
+def spaceInCre(statues,length,count):
+    if length==1:return True
+    difff=statues[count+1]-statues[count]
+    if difff<=0:
+        return False
+    if count==length-2:
+        return True
+    count+=1
+    return spaceInCre(statues,length,count)
+def incre(statues):
+    length=len(statues)
+    return spaceInCre(statues,length,0)
+    # this Forloop goes through all pairs to check if increasing
+    # for i in range(length-1):
+        
+    
+def space(sequence,length,count):
+    listen=sequence.copy()
+    listen.pop(count)
+    popped=listen
+    if incre(popped):
+        return True
+    if count==length-1:
+        return False
+    count+=1
+    return space(sequence,length,count)
+def solution(sequence):
+    length=len(sequence)
+    return space(sequence,length,0)
+    # This forloop removes a single item from sequence and check if it repeats
+    
+
