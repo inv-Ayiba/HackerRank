@@ -1,0 +1,12 @@
+def solution(trainingData):
+    num=0
+    den=0
+    for i in range(len(trainingData)):
+        if trainingData[i][1]==1:
+            num+= trainingData[i][0]
+            den+=1
+    if num==0:
+        return 0
+    return(num/den)
+            
+
