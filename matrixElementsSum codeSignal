@@ -1,0 +1,28 @@
+def matprint(matr):
+    for i in range(len(matr)):
+        print(matr[i])
+def solution(matrix):
+    matprint(matrix)
+    add=0
+    copyy=[]
+    for i in range(len(matrix)):
+        copyy.append([])
+        for j in range(len(matrix[i])):
+            copyy[i].append("O")
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            if  i-1<0:
+                print("negative",[i],[j],matrix[i][j])
+                add+=matrix[i][j]
+            elif(matrix[i-1][j] >0 ):
+                print("poop",[i],[j],matrix[i][j])
+                add+=matrix[i][j]
+            else:
+                print("ghost",[i],[j],matrix[i][j])
+                matrix[i][j]=0
+                copyy[i][j]="D"
+                
+    matprint(copyy)
+                
+                
+    return(add)
